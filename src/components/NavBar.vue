@@ -1,5 +1,8 @@
 <template>
-  <nav class="nav w-screen z-20 shadow-2xl bg-red-800 text-white">
+  <nav
+    class="nav w-screen z-20 text-white"
+    :class="ishome ? '' : 'shadow-2xl bg-red-800'"
+  >
     <div class="left">
       <span class="font-light text-3xl">
         My
@@ -15,7 +18,13 @@
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  props: {
+    ishome: {
+      type: Boolean,
+      default: true
+    }
+  }
 }
 </script>
 
